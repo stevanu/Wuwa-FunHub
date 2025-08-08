@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-cinzel: "Cinzel", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
