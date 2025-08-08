@@ -16,7 +16,7 @@ If you are developing a production application, we recommend using TypeScript wi
 ## Clone the repository
 
 ```bash
-git clone https://github.com/stevanu/React-Portofolio.git
+git clone https://github.com/stevanu/Wuwa-FunHub
 ```
 
 ## Navigate into the directory
