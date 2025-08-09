@@ -17,13 +17,12 @@ function SlashTitle({ children }) {
       style={{ transformStyle: "preserve-3d" }}
     >
       <h1
-        className="text-5xl md:text-7xl lg:text-8xl font-bold font-cinzel tracking-widest uppercase
-                   bg-gradient-to-b from-[#fff6d5] via-[#ffe89c] to-[#d6b85d] bg-clip-text text-transparent select-none"
+        className="text-5xl md:text-7xl lg:text-8xl font-bold font-cinzel tracking-widest 
+                   bg-gradient-to-b from-[#ffecd5] via-[#ffe89c] to-[#d6b85d] bg-clip-text text-transparent select-none"
         style={{
           textShadow: `
             0 3px 4px rgba(0,0,0,0.85),
-            0 8px 12px rgba(0,0,0,0.6),
-            0 14px 28px rgba(0,0,0,0.4)
+            0 1px 28px rgba(0,0,0,0.4)
           `,
           WebkitTextFillColor: "transparent",
           WebkitBackgroundClip: "text",
@@ -169,26 +168,26 @@ export default function Home() {
 
           <MotionA
             href="#more-content"
-            className="mt-6 group relative inline-block focus:outline-none"
+            className="mt-6 group relative inline-block focus:outline-none rounded-full"
             initial={{ scale: 1 }}
             whileHover={{
-              scale: 1.07,
-              boxShadow: "0 8px 20px rgba(0,188,212,0.3)",
-              transition: { type: "spring", stiffness: 260, damping: 20 },
+              scale: 1.04,
+              filter: "drop-shadow(0 0 12px rgba(255, 140, 0, 0.7))",
+              transition: { duration: 0.35, ease: "easeOut" },
             }}
-            whileTap={{ scale: 0.97 }}
+            whileTap={{ scale: 0.96, filter: "none" }}
           >
             <span
-              className="relative z-10 inline-flex items-center gap-3 px-10 py-3 text-base font-semibold tracking-wide rounded-full text-white font-cinzel"
+              className="relative z-10 inline-flex items-center gap-3 px-5 py-3  text-base font-bold tracking-wide
+               rounded-full text-black font-cinzel border border-yellow-500 bg-gradient-to-b from-yellow-400
+                via-yellow-400 to-orange-400 transition-colors duration-300 group-hover:border-yellow-400"
               style={{
-                background:
-                  "linear-gradient(180deg, rgba(0,188,212,0.1), rgba(0,188,212,0.03))",
-                transition: "background 0.3s ease",
+                backdropFilter: "blur(6px)",
               }}
             >
               Explore Characters
             </span>
-            <span className="absolute inset-0 rounded-full bg-black/50 pointer-events-none" />
+            <span className="absolute inset-0 rounded-full bg-black/70 pointer-events-none transition duration-300 group-hover:bg-black/60" />
           </MotionA>
         </MotionDiv>
       </section>
