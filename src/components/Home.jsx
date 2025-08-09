@@ -1,4 +1,3 @@
-// Home.jsx
 import React, { useState } from "react";
 import { videos } from "../data";
 import { motion, AnimatePresence } from "framer-motion";
