@@ -179,7 +179,7 @@ export default function Home() {
           >
             <span
               className="relative z-10 inline-flex items-center gap-3 px-5 py-3  text-base font-bold tracking-wide
-               rounded-full text-black font-cinzel border border-yellow-500 bg-gradient-to-b from-yellow-400
+               rounded-2xl text-black font-cinzel border border-yellow-500 bg-gradient-to-b from-yellow-400
                 via-yellow-400 to-orange-400 transition-colors duration-300 group-hover:border-yellow-400"
               style={{
                 backdropFilter: "blur(6px)",
@@ -187,7 +187,7 @@ export default function Home() {
             >
               Explore Characters
             </span>
-            <span className="absolute inset-0 rounded-full bg-black/70 pointer-events-none transition duration-300 group-hover:bg-black/60" />
+            <span className="absolute inset-0 rounded-2xl bg-black/70 pointer-events-none transition duration-300 group-hover:bg-black/60" />
           </MotionA>
         </MotionDiv>
       </section>

@@ -32,7 +32,7 @@ function Hero() {
               animateOpacity
               scale={1.02}
               threshold={0.2}
-              delay={index * 0.25}
+              delay={index * 0.15}
             >
               <div
                 className="relative bg-gray-900/60 backdrop-blur-sm rounded-xl p-4 

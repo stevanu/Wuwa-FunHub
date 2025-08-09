@@ -37,9 +37,10 @@ export const AnimatedContent = ({
           delay,
           scrollTrigger: {
             trigger: el.current,
-            start: "top 85%",
-            end: "bottom 15%",
-            toggleActions: "play reverse play reverse",
+            start: "top 95%",
+            // end bisa kamu hapus atau tetap
+            once: true, // <--- animasi cuma jalan 1x
+            // toggleActions: "play none none none", // opsional, bisa pakai ini juga
             markers: false,
           },
         }
