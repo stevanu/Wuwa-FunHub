@@ -66,7 +66,7 @@ export default function Home() {
   return (
     <div className="font-sans text-white scroll-smooth">
       <section className="relative w-full h-screen overflow-hidden">
-        {/* Background Video */}
+        {/* Background Video with smooth fade transitions */}
         <AnimatePresence mode="wait">
           <motion.video
             key={currentVideo}
@@ -84,16 +84,25 @@ export default function Home() {
           />
         </AnimatePresence>
 
-        {/* Overlay */}
+        {/* Dark gradient overlay with blur for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/80 backdrop-blur-[2px] z-[-1]" />
 
-        {/* Change Background control with entrance animation */}
+        {/* Button to toggle video thumbnails */}
         <motion.button
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} // ease-out cubic yang smooth
-          className="absolute top-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 px-5 py-2 bg-black/70 rounded-full backdrop-blur-lg border border-blue-700/30 shadow-[0_0_10px_rgba(30,144,255,0.3)] text-blue-500 text-sm font-semibold cursor-pointer
-     hover:bg-black/85 hover:border-blue-500 transition-colors duration-300 ease-in-out"
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="
+            absolute top-4 left-1/2 -translate-x-1/2 z-30
+            flex items-center gap-3
+            px-5 py-2
+            bg-black/70 rounded-full backdrop-blur-lg
+            border border-blue-700/30 shadow-[0_0_10px_rgba(30,144,255,0.3)]
+            text-blue-500 text-sm font-semibold
+            cursor-pointer
+            hover:bg-black/85 hover:border-blue-500
+            transition-colors duration-300 ease-in-out
+          "
           onClick={() => setShowThumbnails((prev) => !prev)}
           whileHover={{
             scale: 1.06,
@@ -114,7 +123,7 @@ export default function Home() {
           </span>
         </motion.button>
 
-        {/* Thumbnails */}
+        {/* Video Thumbnails panel */}
         <AnimatePresence>
           {showThumbnails && (
             <motion.div
@@ -122,7 +131,12 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.22 }}
-              className="absolute top-16 left-1/2 -translate-x-1/2 flex gap-3 z-20 p-3 bg-black/30 backdrop-blur-md rounded-2xl shadow-lg max-w-[90vw] overflow-x-auto"
+              className="
+                absolute top-16 left-1/2 -translate-x-1/2
+                flex gap-3
+                z-20 p-3 bg-black/30 backdrop-blur-md rounded-2xl shadow-lg
+                max-w-[90vw] overflow-x-auto
+              "
               onMouseLeave={() => setShowThumbnails(false)}
             >
               {videos.map((vid, idx) => {
@@ -138,7 +152,11 @@ export default function Home() {
                         : { scale: 1, boxShadow: "none" }
                     }
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="relative rounded-lg p-[2px] bg-gradient-to-br from-white/6 to-white/2 backdrop-blur-sm shadow-md"
+                    className="
+                      relative rounded-lg p-[2px]
+                      bg-gradient-to-br from-white/6 to-white/2
+                      backdrop-blur-sm shadow-md
+                    "
                   >
                     {isActive && (
                       <span className="absolute -inset-0.5 rounded-lg bg-blue-400/30 blur-md" />
@@ -147,6 +165,7 @@ export default function Home() {
                       src={vid.thumb}
                       alt={vid.name}
                       className="w-14 h-14 md:w-16 md:h-16 rounded-md object-cover block"
+                      loading="lazy"
                     />
                   </motion.button>
                 );
@@ -155,7 +174,7 @@ export default function Home() {
           )}
         </AnimatePresence>
 
-        {/* Center content */}
+        {/* Center Content: Title & Explore Button */}
         <MotionDiv
           className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6"
           initial={{ opacity: 0, y: 20 }}
@@ -178,12 +197,15 @@ export default function Home() {
             whileTap={{ scale: 0.96, filter: "none" }}
           >
             <span
-              className="relative z-10 inline-flex items-center gap-3 px-5 py-3  text-base font-bold tracking-wide
-               rounded-2xl text-black font-cinzel border border-yellow-500 bg-gradient-to-b from-yellow-400
-                via-yellow-400 to-orange-400 transition-colors duration-300 group-hover:border-yellow-400"
-              style={{
-                backdropFilter: "blur(6px)",
-              }}
+              className="
+                relative z-10 inline-flex items-center gap-3
+                px-5 py-3 text-base font-bold tracking-wide
+                rounded-2xl text-black font-cinzel
+                border border-yellow-500
+                bg-gradient-to-b from-yellow-400 via-yellow-400 to-orange-400
+                transition-colors duration-300 group-hover:border-yellow-400
+              "
+              style={{ backdropFilter: "blur(6px)" }}
             >
               Explore Characters
             </span>
