@@ -1,13 +1,66 @@
+// Home.jsx
 import React, { useState } from "react";
 import { videos } from "../data";
 import { motion, AnimatePresence } from "framer-motion";
-import { VideoCameraIcon } from "@heroicons/react/24/solid"; // ganti icon
+import { VideoCameraIcon } from "@heroicons/react/24/solid";
 
-const MotionH1 = motion.h1;
 const MotionDiv = motion.div;
 const MotionA = motion.a;
 
-function Home() {
+function SlashTitle({ children }) {
+  return (
+    <motion.div
+      className="relative inline-block [perspective:2000px]"
+      initial={{ opacity: 0, y: 40, rotateX: -10 }}
+      animate={{ opacity: 1, y: 0, rotateX: 0 }}
+      transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
+      style={{ transformStyle: "preserve-3d" }}
+    >
+      <h1
+        className="text-5xl md:text-7xl lg:text-8xl font-bold font-cinzel tracking-widest uppercase
+                   bg-gradient-to-b from-[#fff6d5] via-[#ffe89c] to-[#d6b85d] bg-clip-text text-transparent select-none"
+        style={{
+          textShadow: `
+            0 3px 4px rgba(0,0,0,0.85),
+            0 8px 12px rgba(0,0,0,0.6),
+            0 14px 28px rgba(0,0,0,0.4)
+          `,
+          WebkitTextFillColor: "transparent",
+          WebkitBackgroundClip: "text",
+        }}
+      >
+        {children}
+      </h1>
+
+      <motion.div
+        className="absolute left-1/2 bottom-[-12px] h-[2px] w-[70%] rounded-full bg-gradient-to-r from-transparent via-[#ffe89c] to-transparent origin-left"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ delay: 1, duration: 1.5, ease: "easeOut" }}
+      />
+
+      <motion.span
+        aria-hidden="true"
+        initial={{ x: "-160%", rotate: -18, opacity: 0.8 }}
+        animate={{ x: "160%", opacity: 0 }}
+        transition={{ delay: 1.2, duration: 1.2, ease: "easeOut" }}
+        className="absolute -top-8 left-0 w-[180%] h-[200%] pointer-events-none"
+      >
+        <span
+          className="absolute block w-full h-full"
+          style={{
+            background:
+              "linear-gradient(120deg, rgba(255,255,255,0) 48%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0) 52%)",
+            transform: "rotate(-18deg)",
+            filter: "blur(0.5px)",
+          }}
+        />
+      </motion.span>
+    </motion.div>
+  );
+}
+
+export default function Home() {
   const [currentVideo, setCurrentVideo] = useState(videos[0].src);
   const [showThumbnails, setShowThumbnails] = useState(false);
 
@@ -18,7 +71,7 @@ function Home() {
         <AnimatePresence mode="wait">
           <motion.video
             key={currentVideo}
-            className="absolute top-0 left-0 w-full h-full object-cover z-[-2]"
+            className="absolute inset-0 w-full h-full object-cover z-[-2]"
             src={currentVideo}
             type="video/mp4"
             autoPlay
@@ -33,112 +86,112 @@ function Home() {
         </AnimatePresence>
 
         {/* Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 via-black/20 to-black/80 backdrop-blur-[2px] z-[-1]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/80 backdrop-blur-[2px] z-[-1]" />
 
-        {/* Tombol indikator */}
+        {/* Change Background control with entrance animation */}
         <motion.button
-          className="absolute top-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full backdrop-blur-md border border-white/10 shadow-lg hover:shadow-cyan-400/30 text-sm font-medium cursor-pointer"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} // ease-out cubic yang smooth
+          className="absolute top-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 px-5 py-2 bg-black/70 rounded-full backdrop-blur-lg border border-blue-700/30 shadow-[0_0_10px_rgba(30,144,255,0.3)] text-blue-500 text-sm font-semibold cursor-pointer
+     hover:bg-black/85 hover:border-blue-500 transition-colors duration-300 ease-in-out"
           onClick={() => setShowThumbnails((prev) => !prev)}
-          animate={{
-            scale: [1, 1, 1],
-            boxShadow: [
-              "0 0 0px rgba(6,182,212,0.6)",
-              "0 0 12px rgba(6,182,212,0.8)",
-              "0 0 0px rgba(6,182,212,0.6)",
-            ],
+          whileHover={{
+            scale: 1.06,
+            boxShadow: "0 0 15px rgba(30,144,255,0.5)",
+            transition: { type: "spring", stiffness: 300, damping: 20 },
+            transformOrigin: "center",
           }}
-          transition={{ repeat: Infinity, duration: 2 }}
+          whileTap={{
+            scale: 0.93,
+            transition: { type: "spring", stiffness: 400, damping: 30 },
+            transformOrigin: "center",
+          }}
+          aria-label="Change background"
         >
-          <VideoCameraIcon className="w-5 h-5 text-cyan-300" />
-          Change Background
+          <VideoCameraIcon className="w-4 h-4 text-blue-500" />
+          <span className="select-none font-cinzel text-white">
+            Change Background
+          </span>
         </motion.button>
 
-        {/* Thumbnail selector */}
+        {/* Thumbnails */}
         <AnimatePresence>
           {showThumbnails && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-16 left-1/2 -translate-x-1/2 flex gap-3 z-20 p-3 bg-black/30 backdrop-blur-lg rounded-2xl shadow-lg max-w-[90vw] overflow-x-auto"
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.22 }}
+              className="absolute top-16 left-1/2 -translate-x-1/2 flex gap-3 z-20 p-3 bg-black/30 backdrop-blur-md rounded-2xl shadow-lg max-w-[90vw] overflow-x-auto"
               onMouseLeave={() => setShowThumbnails(false)}
             >
               {videos.map((vid, idx) => {
                 const isActive = currentVideo === vid.src;
                 return (
-                  <motion.div
+                  <motion.button
                     key={idx}
-                    className="group relative cursor-pointer"
                     onClick={() => setCurrentVideo(vid.src)}
-                    whileHover={{ scale: 1.08 }}
-                    animate={isActive ? { scale: 1.12 } : { scale: 1 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                    whileHover={{ scale: 1.08, boxShadow: "0 0 12px #00bfff" }}
+                    animate={
+                      isActive
+                        ? { scale: 1.1, boxShadow: "0 0 18px #00bfff" }
+                        : { scale: 1, boxShadow: "none" }
+                    }
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="relative rounded-lg p-[2px] bg-gradient-to-br from-white/6 to-white/2 backdrop-blur-sm shadow-md"
                   >
                     {isActive && (
-                      <motion.div
-                        className="absolute -inset-1 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 blur-md opacity-60"
-                        layoutId="activeGlow"
-                      />
+                      <span className="absolute -inset-0.5 rounded-lg bg-blue-400/30 blur-md" />
                     )}
-                    <div className="relative rounded-xl p-[2px] bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md shadow-md hover:shadow-cyan-400/20 transition-shadow">
-                      <img
-                        src={vid.thumb}
-                        alt={vid.name}
-                        className="w-14 h-14 md:w-16 md:h-16 rounded-lg object-cover"
-                      />
-                    </div>
-                  </motion.div>
+                    <img
+                      src={vid.thumb}
+                      alt={vid.name}
+                      className="w-14 h-14 md:w-16 md:h-16 rounded-md object-cover block"
+                    />
+                  </motion.button>
                 );
               })}
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Main content */}
+        {/* Center content */}
         <MotionDiv
           className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <MotionH1 className="text-5xl md:text-7xl font-extrabold font-cinzel tracking-wide drop-shadow-[2px_2px_8px_rgba(0,0,0,0.8)]">
-            Wuthering Wave
-          </MotionH1>
+          <div className="mb-6">
+            <SlashTitle>Wuthering Wave</SlashTitle>
+          </div>
 
           <MotionA
             href="#more-content"
-            className="mt-12 group relative inline-block focus:outline-none"
-            whileHover={{ scale: 1.05 }}
+            className="mt-6 group relative inline-block focus:outline-none"
+            initial={{ scale: 1 }}
+            whileHover={{
+              scale: 1.07,
+              boxShadow: "0 8px 20px rgba(0,188,212,0.3)",
+              transition: { type: "spring", stiffness: 260, damping: 20 },
+            }}
+            whileTap={{ scale: 0.97 }}
           >
             <span
-              className="relative z-10 flex items-center gap-3 px-10 py-4 text-lg font-medium tracking-wide text-white rounded-full shadow-lg overflow-hidden"
+              className="relative z-10 inline-flex items-center gap-3 px-10 py-3 text-base font-semibold tracking-wide rounded-full text-white font-cinzel"
               style={{
                 background:
-                  "linear-gradient(270deg, #06b6d4, #3b82f6, #8b5cf6, #ec4899)",
-                backgroundSize: "800% 800%",
-                animation: "gradientMove 8s ease infinite",
+                  "linear-gradient(180deg, rgba(0,188,212,0.1), rgba(0,188,212,0.03))",
+                transition: "background 0.3s ease",
               }}
             >
-              <span className="relative font-bold z-10">
-                Explore Characters
-              </span>
-              <div className="absolute inset-0 rounded-full bg-white/10 blur-md opacity-50 group-hover:opacity-70 transition duration-300"></div>
+              Explore Characters
             </span>
-            <span className="absolute inset-0 rounded-full bg-cyan-400/20 blur-xl group-hover:opacity-80 transition duration-300"></span>
+            <span className="absolute inset-0 rounded-full bg-black/50 pointer-events-none" />
           </MotionA>
         </MotionDiv>
-
-        <style>{`
-          @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-        `}</style>
       </section>
     </div>
   );
 }
-
-export default Home;

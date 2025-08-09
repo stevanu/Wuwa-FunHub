@@ -38,6 +38,11 @@ export const characters = [
 
 export const videos = [
   {
+    src: "/asset/vidio/Jinshi-pv.mp4",
+    thumb: "/asset/thumb/thumb-jinshi.jpg",
+    name: "Jinshi",
+  },
+  {
     src: "/asset/vidio/Cartethyia.mp4",
     thumb: "/asset/thumb/thumb-cartethyia.jpg",
     name: "Cartethyia",
@@ -56,10 +61,5 @@ export const videos = [
     src: "/asset/vidio/pv-charlotta.mp4",
     thumb: "/asset/thumb/thumb-charlotta.jpg",
     name: "Charlotta",
-  },
-  {
-    src: "/asset/vidio/Jinshi-pv.mp4",
-    thumb: "/asset/thumb/thumb-jinshi.jpg",
-    name: "Jinshi",
   },
 ];
