@@ -5,7 +5,7 @@ export const characters = [
     resonance: ["havoc", "aero", "spectro"],
     role: "Hybrid DPS / Sustain",
     img: "/asset/characters/rover-aero.webp",
-    desc: "A mysterious figure with a forgotten past. Able to wield Echoes and adapt to any battle.",
+    desc: "A mysterious figure with a forgotten past. Able to wield Echoes and adapt .",
   },
   {
     id: 20,
@@ -82,7 +82,7 @@ export const characters = [
   {
     id: 110,
     name: "Carlotta",
-    resonance: "galcio",
+    resonance: "glacio",
     role: "Support",
     img: "/asset/characters/carlotta.webp",
     desc: "A stoic warrior dedicated to protecting others. Masters heavy weapons and control.",
@@ -301,3 +301,7 @@ export const videos = [
     name: "Charlotta",
   },
 ];
+
+export const weapon = [];
+
+export const reformasi = [];

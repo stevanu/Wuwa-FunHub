@@ -8,3 +8,24 @@
 html {
   scroll-behavior: smooth;
 }
+
+@media (max-width: 639px) {
+  .char-img-small,
+  .card {
+    height: 60%;
+    width: 70%; /* setengah dari ukuran default */
+    object-fit: cover;
+    margin: auto;
+  }
+
+  .card {
+    margin: auto; /* supaya posisinya center */
+  }
+
+  .card-con {
+    display: flex;
+    flex-wrap: wrap; /* biar card tetap turun ke bawah */
+    justify-content: center; /* center horizontal */
+    align-items: center; /* center vertical kalau tinggi penuh */
+  }
+}

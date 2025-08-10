@@ -84,7 +84,7 @@ export default function Home() {
         </AnimatePresence>
 
         {/* Dark gradient overlay with blur for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/80 backdrop-blur-[2px] z-[-1]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/80 backdrop-blur-[1px] z-[-1]" />
 
         {/* Button to toggle video thumbnails */}
         <motion.button
@@ -92,12 +92,12 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="
-            absolute top-4 left-1/2 -translate-x-1/2 z-30
+            absolute top-3 left-1/2 -translate-x-1/2 z-30
             flex items-center gap-3
-            px-5 py-2
-            bg-black/70 rounded-full backdrop-blur-lg
+            px-3 py-2
+            bg-black/70 rounded-2xl backdrop-blur-lg
             border border-blue-700/30 shadow-[0_0_10px_rgba(30,144,255,0.3)]
-            text-blue-500 text-sm font-semibold
+            text-blue-500 text-sm  font-semibold
             cursor-pointer
             hover:bg-black/85 hover:border-blue-500
             transition-colors duration-300 ease-in-out
@@ -117,7 +117,7 @@ export default function Home() {
           aria-label="Change background"
         >
           <VideoCameraIcon className="w-4 h-4 text-blue-500" />
-          <span className="select-none font-cinzel text-white">
+          <span className="select-none font-normal text-white">
             Change Background
           </span>
         </motion.button>
@@ -186,7 +186,7 @@ export default function Home() {
 
           <MotionA
             href="#more-content"
-            className="mt-6 group relative inline-block focus:outline-none rounded-full"
+            className="mt-6 top-50 group relative inline-block focus:outline-none rounded-full"
             initial={{ scale: 1 }}
             whileHover={{
               scale: 1.04,
