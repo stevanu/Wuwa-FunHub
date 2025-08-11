@@ -26,19 +26,19 @@
    git clone https://github.com/stevanu/Wuwa-FunHub.git
 ```
 
-2. ## Navigate into the directory
+##2. Navigate into the directory
 
 ```
 cd Wuwa-FunHub
 ```
 
-3. ## Install dependencies
+##3. Install dependencies
 
 ```
 npm install
 ```
 
-4. ## Start development server
+##4. Start development server
 
 ```
 npm run dev
