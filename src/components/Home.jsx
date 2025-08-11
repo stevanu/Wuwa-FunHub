@@ -84,18 +84,17 @@ export default function Home() {
         </AnimatePresence>
 
         {/* Dark gradient overlay with blur for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/80 backdrop-blur-[1px] z-[-1]" />
-
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/15 to-black/70 backdrop-blur-[1px] z-[-1]" />
         {/* Button to toggle video thumbnails */}
         <motion.button
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="
-            absolute top-3 left-1/2 -translate-x-1/2 z-30
+            absolute top-2 left-1/2 -translate-x-1/2 z-30
             flex items-center gap-3
             px-3 py-2
-            bg-black/70 rounded-2xl backdrop-blur-lg
+            bg-black/70 rounded-xl backdrop-blur-lg
             border border-blue-700/30 shadow-[0_0_10px_rgba(30,144,255,0.3)]
             text-blue-500 text-sm  font-semibold
             cursor-pointer
@@ -199,9 +198,9 @@ export default function Home() {
               className="
                 relative z-10 inline-flex items-center gap-3
                 px-5 py-3 text-base font-bold tracking-wide
-                rounded-2xl text-black font-cinzel
+                rounded-xl text-black font-cinzel
                 border border-yellow-500
-                bg-gradient-to-b from-yellow-400 via-yellow-400 to-orange-400
+                bg-gradient-to-b from-yellow-500 via-yellow-600 to-orange-300
                 transition-colors duration-300 group-hover:border-yellow-400
               "
               style={{ backdropFilter: "blur(6px)" }}
