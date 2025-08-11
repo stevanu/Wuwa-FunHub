@@ -21,34 +21,24 @@
 
 ## 📦 Installation & Usage
 
-**Clone the repository:**
-   ```bash
-   git clone https://github.com/stevanu/Wuwa-FunHub.git
-   cd Wuwa-FunHub
-```
-
-
-## 📦 Installation
-
-## Clone the repository
-
+1. **Clone the repository:**
 ```bash
-git clone https://github.com/stevanu/Wuwa-FunHub
+   git clone https://github.com/stevanu/Wuwa-FunHub.git
 ```
 
-## Navigate into the directory
+2. ## Navigate into the directory
 
 ```
-cd React-Portofolio
+cd Wuwa-FunHub
 ```
 
-## Install dependencies
+3. ## Install dependencies
 
 ```
 npm install
 ```
 
-## Start development server
+4. ## Start development server
 
 ```
 npm run dev
