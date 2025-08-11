@@ -45,20 +45,20 @@ npm run dev
 ```
 
 ## 🤝 Contributing
-1. Fork this repository
+**1. Fork this repository**
 
-2. Create a new feature branch:
+**2. Create a new feature branch:**
 ```
 git checkout -b feature/your-feature-name
 ```
-3. Commit your changes:
+**3. Commit your changes:**
 ```
 git commit -m "Add: Short description of feature"
 ```
-4. Push to the branch:
+**4. Push to the branch:**
 ```
 git push origin feature/your-feature-name
 ```
-5. Open a Pull Request
+**5. Open a Pull Request**
 
 
