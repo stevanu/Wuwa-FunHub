@@ -23,7 +23,7 @@
 
 **1. Clone the repository:**
 ```bash
-   git clone https://github.com/stevanu/Wuwa-FunHub.git
+git clone https://github.com/stevanu/Wuwa-FunHub.git
 ```
 
 **2. Navigate into the directory**
