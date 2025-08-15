@@ -1,38 +1,54 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react&logoColor=white)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.0-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Wuwa FunHub
 
-## Expanding the ESLint configuration
+**Wuwa FunHub**  is designed as a fast, enjoyable, and highly customizable web application. This website showcases detailed information about the characters from the game Wuthering Waves, including comprehensive profiles for each character featured in the game. It serves as a versatile solution for modern development scenarios—whether building interactive tools, presenting creative works, or conducting technology experiments. Built on React, Vite, and Tailwind CSS, this project delivers high performance and maximum design flexibility.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
-## 📦 Installation
+## 📦 Installation & Usage
 
-## Clone the repository
-
+**1. Clone the repository:**
 ```bash
-git clone https://github.com/stevanu/Wuwa-FunHub
+git clone https://github.com/stevanu/Wuwa-FunHub.git
 ```
 
-## Navigate into the directory
+**2. Navigate into the directory**
 
 ```
-cd React-Portofolio
+cd Wuwa-FunHub
 ```
 
-## Install dependencies
+**3. Install dependencies**
 
 ```
 npm install
 ```
 
-## Start development server
+**4. Start development server**
 
 ```
 npm run dev
 ```
+
+## 🤝 Contributing
+**1. Fork this repository**
+
+**2. Create a new feature branch:**
+```
+git checkout -b feature/your-feature-name
+```
+**3. Commit your changes:**
+```
+git commit -m "Add: Short description of feature"
+```
+**4. Push to the branch:**
+```
+git push origin feature/your-feature-name
+```
+**5. Open a Pull Request**
+
+
