@@ -6,7 +6,7 @@
 
 # Wuwa FunHub
 
-**Wuwa FunHub** is a lightweight and modern **React + Vite** starter template, designed for fast development and high-performance interactive applications.
+**Wuwa FunHub**  is designed as a fast, enjoyable, and highly customizable web application. This website showcases detailed information about the characters from the game Wuthering Waves, including comprehensive profiles for each character featured in the game. It serves as a versatile solution for modern development scenarios—whether building interactive tools, presenting creative works, or conducting technology experiments. Built on React, Vite, and Tailwind CSS, this project delivers high performance and maximum design flexibility.
 
 ---
 
