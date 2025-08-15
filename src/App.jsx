@@ -3,7 +3,7 @@ import Deeper from "./components/Deeper";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Home from "./components/Home";
-import CharacterDetail from "./components/CharacterDetail"; // halaman detail
+import CharacterDetail from "./components/CharacterDetail";
 import "./index.css";
 
 function App() {

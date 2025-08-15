@@ -24,7 +24,7 @@ function CharacterDetail() {
           className="w-full max-w-lg rounded-lg shadow-lg mb-8"
         />
 
-        {/* Info Dasar */}
+        {/* Info */}
         <p className="text-lg mb-4">
           <span className="font-bold">Role:</span> {character.role}
         </p>

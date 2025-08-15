@@ -38,7 +38,7 @@ export const AnimatedContent = ({
           scrollTrigger: {
             trigger: el.current,
             start: "top 95%",
-            // end bisa kamu hapus atau tetap
+            // end bisa di hapus atau tetap
             once: true, // <--- animasi cuma jalan 1x
             // toggleActions: "play none none none", // opsional, bisa pakai ini juga
             markers: false,
