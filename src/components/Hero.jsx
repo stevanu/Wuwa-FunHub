@@ -49,10 +49,14 @@ function Hero() {
     <div className="card-con text-white">
       <section
         id="more-content"
-        className="py-24 px-6 md:px-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 w-full"
+        className="py-24 px-6 md:px-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 "
       >
         {/* Judul */}
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center font-cinzel bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-200 bg-clip-text text-transparent drop-shadow-[3px_3px_0px_rgba(0,0,0,0.9)] mb-16">
+        <h2
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center font-cinzel 
+        bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-200 bg-clip-text
+         text-transparent drop-shadow-[3px_3px_0px_rgba(0,0,0,0.9)] mb-16"
+        >
           Meet the Resonators
         </h2>
 
@@ -64,7 +68,8 @@ function Hero() {
             <input
               type="text"
               placeholder="Search by name..."
-              className="pl-10 pr-4 py-2 rounded-md text-white border border-yellow-500/40 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-gray-900/60"
+              className="pl-10 pr-4 py-2 rounded-md text-white border border-yellow-500/40 w-full 
+              focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-gray-900/60"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -74,7 +79,8 @@ function Hero() {
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="flex items-center justify-between w-26 h-10 border border-yellow-500/40 rounded-md bg-gray-900/60 p-2 hover:border-yellow-400 transition-colors"
+              className="flex items-center justify-between w-26 h-10 border border-yellow-500/40 rounded-md
+               bg-gray-900/60 p-2 hover:border-yellow-400 transition-colors"
             >
               {selectedResonance ? (
                 <img
@@ -92,7 +98,10 @@ function Hero() {
             </button>
 
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-gray-950 border border-yellow-500/40 rounded-md shadow-lg p-2 z-50">
+              <div
+                className="absolute right-0 mt-2 w-40 bg-gray-950 border border-yellow-500/40 
+              rounded-md shadow-lg p-2 z-50"
+              >
                 {/* Option All */}
                 <button
                   onClick={() => handleSelectResonance("")}

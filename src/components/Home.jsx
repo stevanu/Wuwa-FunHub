@@ -64,12 +64,12 @@ export default function Home() {
 
   return (
     <div className="font-sans text-white scroll-smooth">
-      <section className="relative w-full h-screen overflow-hidden">
+      <section className="relative w-screen h-screen overflow-hidden">
         {/* Background Video with smooth fade transitions */}
         <AnimatePresence mode="wait">
           <motion.video
             key={currentVideo}
-            className="absolute inset-0 w-full h-full object-cover z-[-2]"
+            className="absolute inset-0 w-screen h-full object-cover z-[-2]"
             src={currentVideo}
             type="video/mp4"
             autoPlay
