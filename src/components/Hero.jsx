@@ -49,7 +49,7 @@ function Hero() {
     <div className="card-con text-white">
       <section
         id="more-content"
-        className="py-24 px-6 md:px-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950"
+        className="py-24 px-6 md:px-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 w-full"
       >
         {/* Judul */}
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center font-cinzel bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-200 bg-clip-text text-transparent drop-shadow-[3px_3px_0px_rgba(0,0,0,0.9)] mb-16">

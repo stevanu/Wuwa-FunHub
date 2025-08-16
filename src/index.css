@@ -13,19 +13,19 @@ html {
   .char-img-small,
   .card {
     height: 60%;
-    width: 70%; /* setengah dari ukuran default */
+    width: 70%;
     object-fit: cover;
-    margin: auto;
   }
 
   .card {
-    margin: auto; /* supaya posisinya center */
+    margin: auto;
   }
 
   .card-con {
     display: flex;
-    flex-wrap: wrap; /* biar card tetap turun ke bawah */
-    justify-content: center; /* center horizontal */
-    align-items: center; /* center vertical kalau tinggi penuh */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 }

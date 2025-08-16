@@ -9,7 +9,7 @@ function Deeper() {
         </h2>
         <div className="grid md:grid-cols-2 gap-12">
           <div className="bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-blue-700/30 transition-shadow">
-            <h3 className="text-2xl font-semibold mb-4 text-yellow-400">
+            <h3 className="text-2xl font-semibold mb-4 text-yellow-400 text-center">
               Solaris-3
             </h3>
             <p className="text-gray-300 leading-relaxed">
@@ -29,7 +29,7 @@ function Deeper() {
             </p>
           </div>
           <div className="bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-yellow-600/30 transition-shadow">
-            <h3 className="text-2xl font-semibold mb-4 text-yellow-400">
+            <h3 className="text-2xl font-semibold mb-4 text-yellow-400 text-center">
               Lore
             </h3>
             <p className="text-gray-300 leading-relaxed">
