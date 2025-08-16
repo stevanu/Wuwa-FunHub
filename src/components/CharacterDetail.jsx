@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { characters } from "../data";
-import { motion } from "framer-motion";
+import { motion as _motion } from "framer-motion";
 import { FiArrowLeft } from "react-icons/fi";
 
 function CharacterDetail() {
