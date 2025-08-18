@@ -33,6 +33,21 @@ function CharacterDetail() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const fadeDown = {
+    hidden: {
+      opacity: 0,
+      y: -30, // mulai di atas
+    },
+    visible: {
+      opacity: 1,
+      y: 0, // turun ke posisi normal
+      transition: {
+        duration: 0.9,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white overflow-hidden">
       {/* Efek background radial glow */}
@@ -63,7 +78,7 @@ function CharacterDetail() {
                            bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-200 
                            bg-clip-text text-transparent 
                            drop-shadow-[3px_3px_0px_rgba(0,0,0,0.9)] text-center py-70"
-                variants={fadeUp}
+                variants={fadeDown}
                 initial="hidden"
                 animate="visible"
                 transition={{ duration: 0.6 }}
