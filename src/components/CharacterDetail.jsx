@@ -20,9 +20,9 @@ function CharacterDetail() {
   }
 
   const status = {
-    HP: 1050,
-    Attack: 68,
-    Defense: 63,
+    HP: 5132,
+    Attack: 768,
+    Defense: 263,
     Speed: 100,
     CritRate: "5%",
     CritDamage: "50%",
