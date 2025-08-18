@@ -23,7 +23,7 @@ function CharacterDetail() {
     HP: 5132,
     Attack: 768,
     Defense: 263,
-    Speed: 100,
+    Speed: 73,
     CritRate: "5%",
     CritDamage: "50%",
   };
