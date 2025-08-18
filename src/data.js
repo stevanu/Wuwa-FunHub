@@ -301,7 +301,3 @@ export const videos = [
     name: "Charlotta",
   },
 ];
-
-export const weapon = [];
-
-export const echo = [];
