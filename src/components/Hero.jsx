@@ -61,9 +61,9 @@ function Hero() {
         </h2>
 
         {/* Search + Custom Dropdown */}
-        <div className="flex flex-col sm:flex-row justify-between gap-4 mb-6 relative">
+        <div className="flex flex-col sm:flex-row  gap-4 mb-12 relative max-w-lg mx-auto">
           {/* Search */}
-          <div className="relative w-78 sm:max-w-xs">
+          <div className="relative flex-1 min-w-[200px]">
             <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400" />
             <input
               type="text"
@@ -76,7 +76,10 @@ function Hero() {
           </div>
 
           {/* Custom Dropdown */}
-          <div className="relative" ref={dropdownRef}>
+          <div
+            className="relative min-w-[140px] sm:min-w-[160px] md:min-w-[180px]"
+            ref={dropdownRef}
+          >
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
               className="flex items-center justify-between w-26 h-10 border border-yellow-500/40 rounded-md
